@@ -1,0 +1,13 @@
+{
+    "maven.view": "hierarchical",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/mariadb-java-client-3.3.1.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/javafx.graphics/**/*.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/javafx.fxml.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/javafx.controls.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/javafx.base.jar",
+        "/Users/diekgbbtt/Documents/Java/jdbc_basic/javafx-swt.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
