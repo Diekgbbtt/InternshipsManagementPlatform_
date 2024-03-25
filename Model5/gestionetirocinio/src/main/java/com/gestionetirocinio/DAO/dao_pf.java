@@ -1,6 +1,5 @@
 package com.gestionetirocinio.DAO;
 
-import com.gestionetirocinio.Modello.CustomKey;
 import com.gestionetirocinio.Modello.ProgettoFormativo;
 
 

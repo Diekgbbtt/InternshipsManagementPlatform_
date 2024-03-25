@@ -1,4 +1,4 @@
-package com.gestionetirocinio.Modello; 
+/* package com.gestionetirocinio.Modello; 
 
 import java.io.Serializable;
 
@@ -11,4 +11,4 @@ public class CustomKey implements Serializable{
     private String NomeTutor;
 
 
-}
+} */

@@ -22,13 +22,13 @@ import java.io.IOException;
 @RestController
 public class DataController {
 
-    // @Autowired
+    @Autowired
     private Service_Studente servizi_studente;
     
-    // @Autowired
+    @Autowired
     private Service_CommissioneTesi servizi_commissione;
 
-    // @Autowired
+    @Autowired
     private Service_StudenteIdoneo servizi_studente_idoneo;
 
 
@@ -56,6 +56,7 @@ public class DataController {
     public TirocinioEsterno ConcludiTirocinio(@RequestBody int id){
         return servizi_studente_idoneo.SetStatoConcluso(id);
     }
+
 
 
 }

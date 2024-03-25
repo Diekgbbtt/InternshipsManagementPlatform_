@@ -15,13 +15,13 @@ import com.gestionetirocinio.DAO.dao_Tirocinio;
 @Service
 public class Service_CommissioneTesi {
 
-    //@Autowired
+    @Autowired
     private dao_Tirocinio tbl_tirocinio;
     
-    //@Autowired
+    @Autowired
     private dao_Elaborato tbl_elaborato;
 
-    //@Autowired
+    @Autowired
     private dao_studente tbl_studente;
 
     private Collection<Integer> MatricoleRichieste;
@@ -41,9 +41,9 @@ public class Service_CommissioneTesi {
     public TirocinioEsterno UpdateTirocinio(int id) {
         TirocinioEsterno RichiestaTirocinioEsterno = tbl_tirocinio.findById(id).orElse(null);
         if(RichiestaTirocinioEsterno.getPf_approvato() && RichiestaTirocinioEsterno.getDisponibilità_docente()) {
-            RichiestaTirocinioEsterno.setStato(Approvato);
+            RichiestaTirocinioEsterno.setTirocinio_st(Approvato);
             System.out.println("Tirocinio Approvato");
-        } else { RichiestaTirocinioEsterno.setStato(Rifiutato);
+        } else { RichiestaTirocinioEsterno.setTirocinio_st(Rifiutato);
             System.out.println("Tirocinio Rifiutato"); }
         return tbl_tirocinio.save(RichiestaTirocinioEsterno);
     } // aggiungere opzionalmente controllo della matricola mandata, creando lista matricoleTirocini doeve si aggiungono amtricole se il tirocinio viene approvato

@@ -3,11 +3,17 @@ package com.gestionetirocinio.Modello;
 import java.util.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,17 +22,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TirocinioEsterno extends TirocinioInterno {
+@Builder
+@Component
+public class TirocinioEsterno { /* extends TirocinioInterno */
 
     @Id
     public int matricola;
 
-    @ManyToOne
-    @JoinColumn(name = "azienda", referencedColumnName = "NomeAzienda")
-    public Azienda azienda;
+/*     @ManyToOne
+    @JoinColumn(name = "azienda", referencedColumnName = "NomeAzienda") */
+    // private Azienda azienda;
 
-
-    public Indirizzo SedeAzienda;
+    public String SedeAzienda;
 
     public Integer TelefonoAziendale;
 

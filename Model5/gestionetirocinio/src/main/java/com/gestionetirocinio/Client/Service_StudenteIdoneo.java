@@ -7,19 +7,20 @@ import org.springframework.stereotype.Service;
 
 import com.gestionetirocinio.DAO.dao_Tirocinio;
 import com.gestionetirocinio.Modello.StatoTirocinio;
+import com.gestionetirocinio.Modello.Studente;
 import com.gestionetirocinio.Modello.TirocinioEsterno;
 import com.gestionetirocinio.Modello.TirocinioInterno;
 
 @Service
 public class Service_StudenteIdoneo extends Service_Studente {
 
-    // @Autowired
+    @Autowired
     private dao_Tirocinio tirocinio_tbl;
 
-    // @Autowired
+     @Autowired
     public TirocinioEsterno TirocinioEst_obj;
 
-    // @Autowired
+
     public StatoTirocinio tirocinio_st;
 
 
@@ -32,12 +33,13 @@ public class Service_StudenteIdoneo extends Service_Studente {
         return null;
     }
 
+
     public StatoTirocinio GetStatoTirocinio(int id) {
-        TirocinioEst_obj = tirocinio_tbl.findById(id).orElse(null);
+        TirocinioEst_obj = new TirocinioEsterno()/* tirocinio_tbl.findById(id).orElse(null) */;
         return TirocinioEst_obj.getTirocinio_st();
 
     }
-
+    @Autowired
     public TirocinioEsterno UpdateDate(TirocinioEsterno Tir_esterno) { // da rivedere passando solo datainizio-fine e matricola(come amppare questi valori nella richiesta)
 
         if(GetStatoTirocinio(Tir_esterno.matricola) == tirocinio_st.Approvato) {
@@ -47,6 +49,7 @@ public class Service_StudenteIdoneo extends Service_Studente {
             return tirocinio_tbl.save(TirocinioEst_obj);
         } else System.out.println("Tirocinio Non Approvato"); return null;
     }
+    
 
     public TirocinioEsterno SetStatoConcluso(int id) {
 

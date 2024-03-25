@@ -3,6 +3,8 @@ package com.gestionetirocinio.Modello;
 import java.util.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -16,17 +18,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@IdClass(CustomKey.class)
+// @IdClass(CustomKey.class)
 public class ProgettoFormativo {
 
+
     @Id
-    @ManyToOne
-    @JoinColumn(name = "azienda", referencedColumnName = "NomeAzienda")
-    private Azienda azienda;
-    
-    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+/*     @ManyToOne
+    @JoinColumn(name = "azienda", referencedColumnName = "NomeAzienda") */
+    // private Azienda azienda;
+
     private String  NomeTutor;
-    
 
     public String Ruolo;
 
@@ -38,7 +42,7 @@ public class ProgettoFormativo {
 
     public Integer DurataMinima;
 
-    // public Indirizzo Luogo;
+    public String Luogo;
 
     public Integer Compenso;
 

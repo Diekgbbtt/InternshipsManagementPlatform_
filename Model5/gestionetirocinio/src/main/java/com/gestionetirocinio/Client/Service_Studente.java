@@ -16,11 +16,11 @@ import com.gestionetirocinio.DAO.dao_studente;
 @Primary
 public class Service_Studente {
 
-    // @Autowired
+    @Autowired
     private dao_studente studente_tbl;
 
-    // @Autowired
-    private Studente studente_obj;
+    @Autowired
+    public Studente studente_obj;
 
 
     public Studente getStudenteById(int id) {
@@ -30,7 +30,7 @@ public class Service_Studente {
     public boolean VerificaIdoneita(int id){
 
         studente_obj = getStudenteById(id);
-        if(studente_obj.getCFU()>120 && studente_obj.getStatoCarriera()=="Attiva"){
+        if((studente_obj.getCFU())>120 && studente_obj.getStatoCarriera()=="Attiva"){
             System.out.println("Studente Idoneo");
             return true;
         }

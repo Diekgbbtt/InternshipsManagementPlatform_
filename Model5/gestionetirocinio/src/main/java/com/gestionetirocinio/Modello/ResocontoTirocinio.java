@@ -1,10 +1,13 @@
 package com.gestionetirocinio.Modello;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,15 +18,16 @@ import java.util.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ResocontoTirocinio {
 
 
     @Id
     private int matricola;
     
-    @OneToOne
-    @JoinColumn(name = "matricola", referencedColumnName = "matricola")
-    private TirocinioEsterno Tir_esterno;
+/*     @OneToOne
+    @JoinColumn(name = "matricola", referencedColumnName = "matricola") */
+    // private TirocinioEsterno Tir_esterno;
 
     
     public String Ruolo;

@@ -2,11 +2,14 @@ package com.gestionetirocinio.Modello;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,13 +17,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RiassuntoAttivita{
 
     @Id
     private int matricola;
-    @OneToOne
-    @JoinColumn(name = "matricola", referencedColumnName = "matricola" )
-    private TirocinioEsterno Tir_esterno;
+
+/*     @OneToOne
+    @JoinColumn(name = "matricola", referencedColumnName = "matricola" ) */
+    // private TirocinioEsterno Tir_esterno;
 
     private String NomeFile;
 
