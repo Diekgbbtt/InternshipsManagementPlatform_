@@ -32,6 +32,6 @@ public class TirocinioInterno {
 
     public Integer NumSettimane;
 
-    public StatoTirocinio Stato;
+    public String Stato;
 
 }

@@ -1,5 +1,6 @@
 package com.gestionetirocinio.Modello;
 
+import java.time.LocalDate;
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -33,6 +34,10 @@ public class TirocinioEsterno { /* extends TirocinioInterno */
     @JoinColumn(name = "azienda", referencedColumnName = "NomeAzienda") */
     // private Azienda azienda;
 
+/*     public String NomeAzienda; */
+
+    private String nome_azienda;
+
     public String SedeAzienda;
 
     public Integer TelefonoAziendale;
@@ -45,10 +50,10 @@ public class TirocinioEsterno { /* extends TirocinioInterno */
 
     private Boolean disponibilità_docente;
 
-    private StatoTirocinio tirocinio_st;
+    private String tirocinio_st;
 
-    private Date DataInizio;
-    private Date DataFine;
+    private LocalDate DataInizio;
+    private LocalDate DataFine;
 
     private Boolean convalidato;
 /* 

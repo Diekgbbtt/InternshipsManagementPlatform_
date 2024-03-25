@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 
 public interface dao_rt extends JpaRepository<ResocontoTirocinio, Integer> {
 
-    ResocontoTirocinio findByName(String Name);
 }

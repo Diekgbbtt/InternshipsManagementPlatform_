@@ -1,11 +1,11 @@
-package com.gestionetirocinio.Modello;
+/* package com.gestionetirocinio.Modello;
 
 import org.springframework.stereotype.Component;
-
+ */
 /**
  * 
  */
-@Component
+/* @Component
 public enum StatoTirocinio {
     Richiesto,
     Approvato,
@@ -13,4 +13,4 @@ public enum StatoTirocinio {
     Attivo,
     Sospeso,
     Concluso
-}
+} */

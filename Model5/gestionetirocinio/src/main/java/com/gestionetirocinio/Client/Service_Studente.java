@@ -30,11 +30,10 @@ public class Service_Studente {
     public boolean VerificaIdoneita(int id){
 
         studente_obj = getStudenteById(id);
-        if((studente_obj.getCFU())>120 && studente_obj.getStatoCarriera()=="Attiva"){
+        if((studente_obj.getCFU())>120 && studente_obj.getStatoCarriera().equals("Attiva")){
             System.out.println("Studente Idoneo");
             return true;
-        }
-        return false;
+        } else return false;
     }
 
 /*     /**

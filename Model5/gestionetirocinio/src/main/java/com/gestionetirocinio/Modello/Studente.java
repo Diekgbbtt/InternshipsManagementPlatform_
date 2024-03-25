@@ -24,7 +24,7 @@ public class Studente {
     @Id
     private Integer matricola;
 
-    private String StatoCarriera;   
+    private String StatoCarriera;
 
     private Integer CFU;
 

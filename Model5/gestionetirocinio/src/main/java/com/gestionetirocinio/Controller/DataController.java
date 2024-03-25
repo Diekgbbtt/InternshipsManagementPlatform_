@@ -3,6 +3,7 @@ package com.gestionetirocinio.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gestionetirocinio.Client.Service_CommissioneTesi;
 import com.gestionetirocinio.Client.Service_Studente;
 import com.gestionetirocinio.Client.Service_StudenteIdoneo;
-import com.gestionetirocinio.Modello.StatoTirocinio;
+/* import com.gestionetirocinio.Modello.StatoTirocinio; */
 import com.gestionetirocinio.Modello.TirocinioEsterno;
 
 import org.springframework.http.HttpStatus;
@@ -32,8 +33,8 @@ public class DataController {
     private Service_StudenteIdoneo servizi_studente_idoneo;
 
 
-    @GetMapping("/Idoneità")
-    public boolean CheckIdoneita(@RequestBody int id) {
+    @GetMapping("/Idoneita/{id}")
+    public boolean CheckIdoneita(@PathVariable int id) {
         return servizi_studente.VerificaIdoneita(id);
     }
 
@@ -42,8 +43,8 @@ public class DataController {
         return servizi_studente_idoneo.SetTirocinioEsterno(tir_Esterno);
     }
 
-    @GetMapping("/ControlloRichiestaTirocinio")
-    public StatoTirocinio CheckStatoRichiesta(@RequestBody int id){
+    @GetMapping("/ControlloRichiestaTirocinio/{id}")
+    public String CheckStatoRichiesta(@PathVariable int id){
         return servizi_studente_idoneo.GetStatoTirocinio(id);
     }
     

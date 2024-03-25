@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.gestionetirocinio.Modello.TirocinioEsterno;
 import com.gestionetirocinio.Modello.Studente;
 import com.gestionetirocinio.Modello.ElaboratoFinale;
-import com.gestionetirocinio.Modello.StatoTirocinio;
+/* import com.gestionetirocinio.Modello.StatoTirocinio; */
 import com.gestionetirocinio.DAO.dao_Elaborato;
 import com.gestionetirocinio.DAO.dao_studente;
 import com.gestionetirocinio.DAO.dao_Tirocinio;
@@ -25,8 +25,8 @@ public class Service_CommissioneTesi {
     private dao_studente tbl_studente;
 
     private Collection<Integer> MatricoleRichieste;
-    private StatoTirocinio Approvato;
-    private StatoTirocinio Rifiutato;
+/*     private StatoTirocinio Approvato;
+    private StatoTirocinio Rifiutato; */
 
     public TirocinioEsterno GetTirocinio(int id){
         for(int matricola : MatricoleRichieste) {
@@ -41,9 +41,9 @@ public class Service_CommissioneTesi {
     public TirocinioEsterno UpdateTirocinio(int id) {
         TirocinioEsterno RichiestaTirocinioEsterno = tbl_tirocinio.findById(id).orElse(null);
         if(RichiestaTirocinioEsterno.getPf_approvato() && RichiestaTirocinioEsterno.getDisponibilità_docente()) {
-            RichiestaTirocinioEsterno.setTirocinio_st(Approvato);
+            RichiestaTirocinioEsterno.setTirocinio_st("Approvato");
             System.out.println("Tirocinio Approvato");
-        } else { RichiestaTirocinioEsterno.setTirocinio_st(Rifiutato);
+        } else { RichiestaTirocinioEsterno.setTirocinio_st("Rifiutato");
             System.out.println("Tirocinio Rifiutato"); }
         return tbl_tirocinio.save(RichiestaTirocinioEsterno);
     } // aggiungere opzionalmente controllo della matricola mandata, creando lista matricoleTirocini doeve si aggiungono amtricole se il tirocinio viene approvato
